@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Iniciar Sesión
+  form(action="/login" method="POST")
+    label(for="username") Nombre de usuario:
+    input(type="text" name="username" required)
+    label(for="password") Contraseña:
+    input(type="password" name="password" required)
+    button(type="submit") Iniciar Sesión
