@@ -18,6 +18,48 @@ Este proyecto es un sistema básico de autenticación que permite el registro, i
 - [PostgreSQL](https://www.postgresql.org/download/) (v12+)
 - Crear una base de datos PostgreSQL para el proyecto y configurar las variables de entorno en el archivo `.env`.
 
+
+## Sistema de Carpetas
+
+El proyecto está organizado de la siguiente manera:
+
+```
+/config
+  └── db.js                # Configuración de la conexión a la base de datos PostgreSQL
+
+/controllers
+  └── authController.js    # Controladores para manejar la lógica de autenticación
+
+/middlewares
+  ├── authMiddleware.js    # Middleware para verificar la autenticación del usuario
+  ├── roleMiddleware.js    # Middleware para verificar roles de usuario
+  └── errorHandler.js      # Middleware para manejar errores globalmente
+
+/models
+  ├── userModel.js         # Modelo para interactuar con la tabla de usuarios
+  └── queries.js           # Consultas SQL reutilizables
+
+/routes
+  └── authRoutes.js        # Rutas relacionadas con la autenticación
+
+/utils
+  └── dbUtils.js           # Función genérica para ejecutar consultas SQL
+
+/views
+  ├── layout.pug           # Plantilla base para las vistas
+  ├── login.pug            # Vista para el inicio de sesión
+  ├── register.pug         # Vista para el registro de usuarios
+  ├── userDashboard.pug    # Vista para el panel de usuario
+  └── adminDashboard.pug   # Vista para el panel de administrador
+
+.gitignore                 # Archivos y carpetas ignorados por Git
+.env.example               # Ejemplo de configuración de variables de entorno
+package.json               # Dependencias y scripts del proyecto
+server.js                  # Archivo principal para iniciar el servidor
+README.md                  # Documentación del proyecto
+```
+
+
 ## Instalación
 
 2. Instalar dependencias

@@ -7,6 +7,9 @@ const authorizeRole = require('../middlewares/roleMiddleware');
 router.get('/register', (req, res) => res.render('register'));
 router.post('/register', register);
 
+// Redirigir de / a /login
+router.get('/', (req, res) => res.redirect('/login'));
+
 router.get('/login', (req, res) => res.render('login'));
 router.post('/login', login);
 

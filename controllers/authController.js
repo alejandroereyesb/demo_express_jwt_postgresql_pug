@@ -5,9 +5,15 @@ const bcrypt = require('bcryptjs');
 async function register(req, res) {
     const { username, password, email, role = 'user' } = req.body;
     try {
+        if (!username || !password || !email) {
+            console.log(username,password,email);
+            
+            return res.status(400).send('Todos los campos son obligatorios');
+        }
         const newUser = await createUser(username, password, email, role);
         res.redirect('/login');
     } catch (error) {
+        console.error('Error en el registro:', error.message);
         res.status(500).send('Error en el registro');
     }
 }

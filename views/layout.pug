@@ -7,8 +7,12 @@ html
       ul
         if role === 'admin'
           li: a(href='/admin/dashboard') Panel de Administración
+          li: a(href='/logout') Cerrar sesión
         else if role === 'user'
           li: a(href='/user/dashboard') Panel de Usuario
-        li: a(href='/logout') Cerrar sesión
+          li: a(href='/logout') Cerrar sesión
+        else
+          li: a(href='/register') Registro
+          li: a(href='/login') Login
 
     block content
