@@ -17,12 +17,12 @@ passport.use(new GoogleStrategy({
         // Si no existe, crearlo con rol 'user'
         if (!user) {
             console.log('Usuario no encontrado, creando uno nuevo.');
-            user = await createUser({
-                name: profile.displayName,
-                email: profile.emails[0].value,
-                role: 'user',
-                password: '123ABCgoogle$', // No se requiere contraseña para usuarios de Google
-            });
+            user = await createUser(
+                profile.displayName, // name
+                profile.emails[0].value, // email
+                'user', // role
+                '123ABCgoogle$', // No se requiere contraseña para usuarios de Google
+            );
         }
 
         // Generar un JWT para el usuario

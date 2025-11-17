@@ -2,8 +2,10 @@ const bcrypt = require('bcryptjs');
 const queries = require('./queries');
 const { executeQuery } = require('../utils/dbUtils');
 
-async function createUser({ name, email, role, password }) {
-    if (!name || !email || !role) {
+async function createUser(name, email, role="user", password) {
+    console.log('Creating user with data:', { name, email, role,  password});
+    
+    if (!name || !email || !role|| !password) {
         throw new Error('Faltan argumentos obligatorios para crear el usuario');
     }
     const hashedPassword = password ? await bcrypt.hash(password, 10) : null;
