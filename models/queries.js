@@ -8,6 +8,11 @@ const queries = {
     findUserByUsername: `
         SELECT * FROM users 
         WHERE username = $1;
+    `,
+
+    findUserByEmail: `
+        SELECT * FROM users 
+        WHERE email = $1;
     `
 };
 
