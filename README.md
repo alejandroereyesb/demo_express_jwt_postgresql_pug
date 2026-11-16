@@ -97,6 +97,7 @@ PORT=3000
 CLIENT_ID=tu_client_id
 CLIENT_SECRET=tu_client_secret
 GOOGLE_CALLBACK_URL=http://localhost:3000/google/callBack
+SESSION_SECRET=tu_secreto_seguro_sesion
 ```
 
 5. Iniciar el servidor:
